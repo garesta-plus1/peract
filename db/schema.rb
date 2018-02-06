@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206182618) do
+ActiveRecord::Schema.define(version: 20180206183057) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "post_id"
@@ -34,6 +34,20 @@ ActiveRecord::Schema.define(version: 20180206182618) do
     t.datetime "last_read_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "content"
+    t.boolean "is_read", default: false
+    t.bigint "user_id"
+    t.bigint "from_user_id"
+    t.bigint "target_content_id"
+    t.string "target_content_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["from_user_id"], name: "index_notifications_on_from_user_id"
+    t.index ["target_content_id"], name: "index_notifications_on_target_content_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
