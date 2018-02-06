@@ -1,0 +1,51 @@
+h1 Listing posts
+
+table
+  thead
+    tr
+      th User
+      th Title
+      th Detail
+      th Category
+      th Image 1
+      th Image 2
+      th Image 3
+      th Published
+      th Status
+      th Num of planner
+      th Num of engineer
+      th Num of designer
+      th Motivation
+      th Period
+      th Scale
+      th Main color
+      th
+      th
+      th
+
+  tbody
+    - @posts.each do |post|
+      tr
+        td = post.user_id
+        td = post.title
+        td = post.detail
+        td = post.category
+        td = post.image_1
+        td = post.image_2
+        td = post.image_3
+        td = post.published
+        td = post.status
+        td = post.num_of_planner
+        td = post.num_of_engineer
+        td = post.num_of_designer
+        td = post.motivation
+        td = post.period
+        td = post.scale
+        td = post.main_color
+        td = link_to 'Show', post
+        td = link_to 'Edit', edit_post_path(post)
+        td = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Post', new_post_path

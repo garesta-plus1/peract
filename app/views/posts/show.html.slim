@@ -1,0 +1,54 @@
+p#notice = notice
+
+p
+  strong User:
+  = @post.user_id
+p
+  strong Title:
+  = @post.title
+p
+  strong Detail:
+  = @post.detail
+p
+  strong Category:
+  = @post.category
+p
+  strong Image 1:
+  = @post.image_1
+p
+  strong Image 2:
+  = @post.image_2
+p
+  strong Image 3:
+  = @post.image_3
+p
+  strong Published:
+  = @post.published
+p
+  strong Status:
+  = @post.status
+p
+  strong Num of planner:
+  = @post.num_of_planner
+p
+  strong Num of engineer:
+  = @post.num_of_engineer
+p
+  strong Num of designer:
+  = @post.num_of_designer
+p
+  strong Motivation:
+  = @post.motivation
+p
+  strong Period:
+  = @post.period
+p
+  strong Scale:
+  = @post.scale
+p
+  strong Main color:
+  = @post.main_color
+
+=> link_to 'Edit', edit_post_path(@post)
+'|
+=< link_to 'Back', posts_path

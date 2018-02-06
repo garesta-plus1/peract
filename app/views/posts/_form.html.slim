@@ -1,0 +1,57 @@
+= form_for @post do |f|
+  - if @post.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+      ul
+        - @post.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :user_id
+    = f.number_field :user_id
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :detail
+    = f.text_area :detail
+  .field
+    = f.label :category
+    = f.text_field :category
+  .field
+    = f.label :image_1
+    = f.text_field :image_1
+  .field
+    = f.label :image_2
+    = f.text_field :image_2
+  .field
+    = f.label :image_3
+    = f.text_field :image_3
+  .field
+    = f.label :published
+    = f.check_box :published
+  .field
+    = f.label :status
+    = f.number_field :status
+  .field
+    = f.label :num_of_planner
+    = f.number_field :num_of_planner
+  .field
+    = f.label :num_of_engineer
+    = f.number_field :num_of_engineer
+  .field
+    = f.label :num_of_designer
+    = f.number_field :num_of_designer
+  .field
+    = f.label :motivation
+    = f.number_field :motivation
+  .field
+    = f.label :period
+    = f.number_field :period
+  .field
+    = f.label :scale
+    = f.number_field :scale
+  .field
+    = f.label :main_color
+    = f.text_field :main_color
+  .actions = f.submit
